@@ -14,27 +14,28 @@ namespace Autosaloon
         public int Cost { get; set; }
         public int QuantityInStock { get; set; }
         public bool Availability { get; private set; }
-        private Avtosaloon Aulotasoon;
-        private ArrayList ApplicationsForPurchase = new ArrayList();
+        public Avtosaloon Aulotasoon { get; private set; }
+        private readonly ArrayList _applicationsForPurchase = new ArrayList();
 
-        public Car(bool availability)
+        public Car(Avtosaloon aulotasoon)
         {
-            Availability = availability;
+            Aulotasoon = aulotasoon;
+            Availability = QuantityInStock != 0;
         }
 
-        public ArrayList GetCars()
+        public ArrayList GetApplications()
         {
-            return ApplicationsForPurchase;
+            return _applicationsForPurchase;
         }
 
-        public void AddCar(Car car)
+        public void AddCar(Application car)
         {
-            ApplicationsForPurchase.Add(car);
+            _applicationsForPurchase.Add(car);
         }
 
-        public void RemoveCar(Car car)
+        public void RemoveCar(Application car)
         {
-            ApplicationsForPurchase.Remove(car);
+            _applicationsForPurchase.Remove(car);
         }
 
     }

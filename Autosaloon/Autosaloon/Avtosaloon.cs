@@ -11,26 +11,26 @@ namespace Autosaloon
         {
             Name = name;
         }
-        private readonly ArrayList Cars= new ArrayList();
+        private readonly ArrayList _cars= new ArrayList();
 
         public ArrayList GetCars()
         {
-            return Cars;
+            return _cars;
         }
 
         public void AddCar(Car car)
         {
-            Cars.Add(car);
+            _cars.Add(car);
         }
 
         public void RemoveCar(Car car)
         {
-            Cars.Remove(car);
+            _cars.Remove(car);
         }
 
         public Car SearchCar(string carName)
         {
-            return Cars.Cast<Car>().FirstOrDefault(car => car.Name == carName);
+            return _cars.Cast<Car>().FirstOrDefault(car => car.Name == carName);
         }
     }
 }

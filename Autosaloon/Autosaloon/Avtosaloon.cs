@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Autosaloon
 {
@@ -15,8 +11,26 @@ namespace Autosaloon
         {
             Name = name;
         }
-        private ArrayList Cars= new ArrayList();
+        private readonly ArrayList Cars= new ArrayList();
 
+        public ArrayList GetCars()
+        {
+            return Cars;
+        }
 
+        public void AddCar(Car car)
+        {
+            Cars.Add(car);
+        }
+
+        public void RemoveCar(Car car)
+        {
+            Cars.Remove(car);
+        }
+
+        public Car SearchCar(string carName)
+        {
+            return Cars.Cast<Car>().FirstOrDefault(car => car.Name == carName);
+        }
     }
 }

@@ -9,17 +9,32 @@ namespace Autosaloon
 {
     public class Car
     {
-        private string Name;
-        private int MaximumNumberOfPassengers;
-        private int Cost;
-        private int QuantityInStock;
-        private bool Availability;
+        public string Name { get; set; }
+        public int MaximumNumberOfPassengers { get; set; }
+        public int Cost { get; set; }
+        public int QuantityInStock { get; set; }
+        public bool Availability { get; private set; }
         private Avtosaloon Aulotasoon;
         private ArrayList ApplicationsForPurchase = new ArrayList();
 
-        public Car()
+        public Car(bool availability)
         {
+            Availability = availability;
+        }
 
+        public ArrayList GetCars()
+        {
+            return ApplicationsForPurchase;
+        }
+
+        public void AddCar(Car car)
+        {
+            ApplicationsForPurchase.Add(car);
+        }
+
+        public void RemoveCar(Car car)
+        {
+            ApplicationsForPurchase.Remove(car);
         }
 
     }

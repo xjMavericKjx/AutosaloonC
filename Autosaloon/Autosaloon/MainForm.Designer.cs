@@ -50,11 +50,13 @@
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QuantityCarsLabel = new System.Windows.Forms.Label();
             this.QuantityCarsInSaloonLabel = new System.Windows.Forms.Label();
+            this.ApplicationListBox = new System.Windows.Forms.ListBox();
             this.CarsPanel.SuspendLayout();
             this.NumberOfCarsPanel.SuspendLayout();
             this.InforationPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.CarInformationTabPage.SuspendLayout();
+            this.ApplicatinsTabPage.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -215,6 +217,7 @@
             // 
             // ApplicatinsTabPage
             // 
+            this.ApplicatinsTabPage.Controls.Add(this.ApplicationListBox);
             this.ApplicatinsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ApplicatinsTabPage.Name = "ApplicatinsTabPage";
             this.ApplicatinsTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -258,6 +261,14 @@
             this.QuantityCarsInSaloonLabel.Size = new System.Drawing.Size(0, 20);
             this.QuantityCarsInSaloonLabel.TabIndex = 1;
             // 
+            // ApplicationListBox
+            // 
+            this.ApplicationListBox.FormattingEnabled = true;
+            this.ApplicationListBox.Location = new System.Drawing.Point(6, 6);
+            this.ApplicationListBox.Name = "ApplicationListBox";
+            this.ApplicationListBox.Size = new System.Drawing.Size(363, 121);
+            this.ApplicationListBox.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,6 +290,7 @@
             this.tabControl.ResumeLayout(false);
             this.CarInformationTabPage.ResumeLayout(false);
             this.CarInformationTabPage.PerformLayout();
+            this.ApplicatinsTabPage.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -310,6 +322,7 @@
         private System.Windows.Forms.Label AvailabilityValueLabel;
         private System.Windows.Forms.Label QuantityCarsInSaloonLabel;
         private System.Windows.Forms.Label QuantityCarsLabel;
+        private System.Windows.Forms.ListBox ApplicationListBox;
     }
 }
 

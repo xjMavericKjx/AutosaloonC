@@ -8,8 +8,8 @@ namespace Autosaloon
         public int SalePercent { get; set; }
 
 
-        public UIApplicationsForDelayedDelivery(string nameOfBuyers,int percent)
-            : base(nameOfBuyers)
+        public UIApplicationsForDelayedDelivery(string nameOfBuyers,Car car,int percent)
+            : base(nameOfBuyers,car)
         {
             SalePercent = percent;
         }

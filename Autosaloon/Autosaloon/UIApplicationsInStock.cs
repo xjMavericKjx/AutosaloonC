@@ -7,8 +7,8 @@ namespace Autosaloon
     public class UIApplicationsInStock : Applications
     {
 
-        public UIApplicationsInStock(String nameOfBuyer)
-            : base(nameOfBuyer)
+        public UIApplicationsInStock(String nameOfBuyer, Car car)
+            : base(nameOfBuyer, car)
         {
         }
 

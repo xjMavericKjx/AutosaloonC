@@ -9,7 +9,7 @@ namespace Autosaloon
         public string CellNumber { get; set; }
         public Car Car { get; set; }
 
-        protected Applications(string nameOfBuyer)
+        protected Applications(string nameOfBuyer,Car car)
         {
             try
             {
@@ -20,6 +20,12 @@ namespace Autosaloon
             {
                 MessageBox.Show("" + ex);
             }
+            Car = car;
+            Car.AddApplication(this);
+        }
+        public override string ToString()
+        {
+            return "" + NameOfBuyer + " - " + CellNumber;
         }
 
         public abstract int СalculateCost();

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Autosaloon
 {
@@ -16,7 +13,16 @@ namespace Autosaloon
 
         public override int СalculateCost()
         {
-            return Car.Cost;
+            try
+            {
+                if (Car.QuantityInStock == 0) throw new CarNumberException("Машина отсутствует на складе");
+                return Car.Cost;
+            }
+            catch (CarNumberException ex)
+            {
+                MessageBox.Show("" + ex);
+                throw;
+            }
         }
     }
 }

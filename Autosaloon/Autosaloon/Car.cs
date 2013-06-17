@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 
 namespace Autosaloon
 {
@@ -28,14 +23,14 @@ namespace Autosaloon
             return _applicationsForPurchase;
         }
 
-        public void AddCar(Applications car)
+        public void AddApplication(Applications application)
         {
-            _applicationsForPurchase.Add(car);
+            _applicationsForPurchase.Add(application);
         }
 
-        public void RemoveCar(Applications car)
+        public void RemoveApplication(Applications application)
         {
-            _applicationsForPurchase.Remove(car);
+            _applicationsForPurchase.Remove(application);
         }
 
     }

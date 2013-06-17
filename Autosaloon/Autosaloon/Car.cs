@@ -28,12 +28,12 @@ namespace Autosaloon
             return _applicationsForPurchase;
         }
 
-        public void AddCar(Application car)
+        public void AddCar(Applications car)
         {
             _applicationsForPurchase.Add(car);
         }
 
-        public void RemoveCar(Application car)
+        public void RemoveCar(Applications car)
         {
             _applicationsForPurchase.Remove(car);
         }

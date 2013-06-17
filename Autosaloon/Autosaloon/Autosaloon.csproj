@@ -44,6 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Applications.cs" />
+    <Compile Include="UIApplicationsForDelayedDelivery.cs" />
+    <Compile Include="UIApplicationsInStock.cs" />
+    <Compile Include="Avtosaloon.cs" />
+    <Compile Include="Car.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

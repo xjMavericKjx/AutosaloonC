@@ -1,4 +1,7 @@
-﻿namespace Autosaloon
+﻿using System.Windows.Forms;
+using Autosaloon.Exceptions;
+
+namespace Autosaloon
 {
     public abstract class Applications
     {
@@ -6,13 +9,20 @@
         public string CellNumber { get; set; }
         public Car Car { get; set; }
 
-        public Applications(string nameOfBuyer)
+        protected Applications(string nameOfBuyer)
         {
-            NameOfBuyer = nameOfBuyer;
+            try
+            {
+                if (string.IsNullOrEmpty(nameOfBuyer)) throw new PurchaserNameException("Неуказано имя покупателя!");
+                NameOfBuyer = nameOfBuyer;
+            }
+            catch (PurchaserNameException ex)
+            {
+                MessageBox.Show("" + ex);
+            }
         }
 
         public abstract int СalculateCost();
-
     }
 
 

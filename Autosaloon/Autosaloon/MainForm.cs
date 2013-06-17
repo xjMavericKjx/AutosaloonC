@@ -1,20 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Autosaloon
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        public MainForm(Avtosaloon saloon)
         {
+            _saloon = saloon;
             InitializeComponent();
+        }
+
+        private readonly Avtosaloon _saloon;
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            Text = _saloon.Name;
+            foreach (var car in _saloon.GetCars())
+            {
+                CarsListBox.Items.Add(car);
+            }
+            QuantityCarsInSaloonLabel.Text = _saloon.GetCars().Count.ToString();
+        }
+
+        private void CarsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var listBox = (ListBox)sender;
+            var car = (Car)listBox.SelectedItem;
+            CarNameTextBox.Text = car.Name;
+            NumberOfPassegerTextBox.Text = car.MaximumNumberOfPassengers.ToString();
+            CostTextBox.Text = car.Cost.ToString();
+            QuantityInStockTextBox.Text = car.QuantityInStock.ToString();
+            AvailabilityValueLabel.Text = car.Availability ? "ДА" : "НЕТ";
         }
     }
 }

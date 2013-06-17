@@ -11,9 +11,12 @@ namespace Autosaloon
         [STAThread]
         static void Main()
         {
+            var saloon = new Avtosaloon("MaverickAutos");
+            var auto = new Car(saloon);
+            auto.Name = "porshe";
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new MainForm(saloon));
         }
     }
 }

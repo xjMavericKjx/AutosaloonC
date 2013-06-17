@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Applications.cs" />
+    <Compile Include="Exceptions\CarNumberException.cs" />
+    <Compile Include="Exceptions\PurchaserNameException.cs" />
     <Compile Include="UIApplicationsForDelayedDelivery.cs" />
     <Compile Include="UIApplicationsInStock.cs" />
     <Compile Include="Avtosaloon.cs" />

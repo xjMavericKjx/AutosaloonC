@@ -9,12 +9,13 @@ namespace Autosaloon
         public int Cost { get; set; }
         public int QuantityInStock { get; set; }
         public bool Availability { get; private set; }
-        public Avtosaloon Aulotasoon { get; private set; }
+        public Avtosaloon Autosaloon { get; private set; }
         private readonly ArrayList _applicationsForPurchase = new ArrayList();
 
         public Car(Avtosaloon aulotasoon)
         {
-            Aulotasoon = aulotasoon;
+            Autosaloon = aulotasoon;
+            Autosaloon.AddCar(this);
             Availability = QuantityInStock != 0;
         }
 
@@ -33,5 +34,9 @@ namespace Autosaloon
             _applicationsForPurchase.Remove(application);
         }
 
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

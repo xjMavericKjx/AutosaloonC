@@ -56,8 +56,7 @@
             this.SaveAutosaloonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CreateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.заявкаНаПокупкуСоСтендаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.заявкаНаОтложеннуюПокупкуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CreateApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CarsPanel.SuspendLayout();
             this.NumberOfCarsPanel.SuspendLayout();
             this.InforationPanel.SuspendLayout();
@@ -304,8 +303,7 @@
             // 
             this.CreateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CarToolStripMenuItem,
-            this.заявкаНаПокупкуСоСтендаToolStripMenuItem,
-            this.заявкаНаОтложеннуюПокупкуToolStripMenuItem});
+            this.CreateApplicationToolStripMenuItem});
             this.CreateToolStripMenuItem.Name = "CreateToolStripMenuItem";
             this.CreateToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.CreateToolStripMenuItem.Text = "Создать";
@@ -313,21 +311,16 @@
             // CarToolStripMenuItem
             // 
             this.CarToolStripMenuItem.Name = "CarToolStripMenuItem";
-            this.CarToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
+            this.CarToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.CarToolStripMenuItem.Text = "Автомобиль";
             this.CarToolStripMenuItem.Click += new System.EventHandler(this.CarToolStripMenuItem_Click);
             // 
-            // заявкаНаПокупкуСоСтендаToolStripMenuItem
+            // CreateApplicationToolStripMenuItem
             // 
-            this.заявкаНаПокупкуСоСтендаToolStripMenuItem.Name = "заявкаНаПокупкуСоСтендаToolStripMenuItem";
-            this.заявкаНаПокупкуСоСтендаToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
-            this.заявкаНаПокупкуСоСтендаToolStripMenuItem.Text = "Заявка на покупку со стенда";
-            // 
-            // заявкаНаОтложеннуюПокупкуToolStripMenuItem
-            // 
-            this.заявкаНаОтложеннуюПокупкуToolStripMenuItem.Name = "заявкаНаОтложеннуюПокупкуToolStripMenuItem";
-            this.заявкаНаОтложеннуюПокупкуToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
-            this.заявкаНаОтложеннуюПокупкуToolStripMenuItem.Text = "Заявка на отложенную покупку";
+            this.CreateApplicationToolStripMenuItem.Name = "CreateApplicationToolStripMenuItem";
+            this.CreateApplicationToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.CreateApplicationToolStripMenuItem.Text = "Заявка на автомобиль";
+            this.CreateApplicationToolStripMenuItem.Click += new System.EventHandler(this.CreateApplicationToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -388,8 +381,7 @@
         private System.Windows.Forms.ToolStripMenuItem SaveAutosaloonToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CreateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem заявкаНаПокупкуСоСтендаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem заявкаНаОтложеннуюПокупкуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CreateApplicationToolStripMenuItem;
     }
 }
 

@@ -24,7 +24,7 @@ namespace Autosaloon
         {
             Text = _saloon.Name;
             QuantityCarsInSaloonLabel.Text = _saloon.GetCars().Count.ToString();
-            ApplicationListBox.Items.Clear();
+            
             var car = (Car)CarsListBox.SelectedItem;
             if (car == null)
             {
@@ -35,10 +35,7 @@ namespace Autosaloon
             CostTextBox.Text = car.Cost.ToString();
             QuantityInStockTextBox.Text = car.QuantityInStock.ToString();
             AvailabilityValueLabel.Text = car.Availability ? "ДА" : "НЕТ";
-            foreach (var application in car.GetApplications())
-            {
-                ApplicationListBox.Items.Add(application);
-            }
+            UpdateApplicationListBox(car);
         }
 
         private void ChangeAutosaloonToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,6 +72,30 @@ namespace Autosaloon
             foreach (var car in _saloon.GetCars())
             {
                 CarsListBox.Items.Add(car);
+            }
+        }
+
+        private void UpdateApplicationListBox(Car car)
+        {
+            ApplicationListBox.Items.Clear();
+            foreach (var application in car.GetApplications())
+            {
+                ApplicationListBox.Items.Add(application);
+            }
+        }
+
+        private void CreateApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (CarsListBox.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите автомобиль из списка!");
+                return;
+            }
+            var application = new CreateApplicationForm((Car)CarsListBox.SelectedItem);
+            application.ShowDialog();
+            if (application.DialogResult == DialogResult.OK)
+            {
+                UpdateApplicationListBox((Car)CarsListBox.SelectedItem);
             }
         }
     }

@@ -5,12 +5,24 @@ namespace Autosaloon
 {
     public partial class CreateNewCarForm : Form
     {
-        private Avtosaloon _saloon;
+        private readonly Avtosaloon _saloon;
         public Car Car { get; private set; }
         public CreateNewCarForm(Avtosaloon saloon)
         {
             _saloon = saloon;
             InitializeComponent();
+        }
+
+        private void CreateCarButton_Click(object sender, EventArgs e)
+        {
+            Car = new Car(_saloon,Convert.ToInt32(QuantityInStockTextBox.Text))
+                {
+                    Name = CarNameTextBox.Text,
+                    MaximumNumberOfPassengers = Convert.ToInt32(NumberOfPassegerTextBox.Text),
+                    Cost = Convert.ToInt32(CostTextBox.Text)
+                };
+            DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void NumberOfPassegerTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -34,16 +46,6 @@ namespace Autosaloon
             {
                 e.Handled = true;
             }
-        }
-
-        private void CreateCarButton_Click(object sender, EventArgs e)
-        {
-            Car = new Car(_saloon,Convert.ToInt32(QuantityInStockTextBox.Text));
-            Car.Name = CarNameTextBox.Text;
-            Car.MaximumNumberOfPassengers = Convert.ToInt32(NumberOfPassegerTextBox.Text);
-            Car.Cost = Convert.ToInt32(CostTextBox.Text);
-            DialogResult = DialogResult.OK;
-            Close();
         }
     }
 }

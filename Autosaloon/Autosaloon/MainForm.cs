@@ -5,29 +5,29 @@ namespace Autosaloon
 {
     public partial class MainForm : Form
     {
-        public MainForm(Avtosaloon saloon)
+        public MainForm()
         {
-            _saloon = saloon;
             InitializeComponent();
         }
 
-        private readonly Avtosaloon _saloon;
+        private Avtosaloon _saloon;
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Text = _saloon.Name;
-            foreach (var car in _saloon.GetCars())
-            {
-                CarsListBox.Items.Add(car);
-            }
-            QuantityCarsInSaloonLabel.Text = _saloon.GetCars().Count.ToString();
+
         }
 
         private void CarsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            UpdateWindow();
+        }
+
+        private void UpdateWindow()
+        {
+            Text = _saloon.Name;
+            QuantityCarsInSaloonLabel.Text = _saloon.GetCars().Count.ToString();
             ApplicationListBox.Items.Clear();
-            var listBox = (ListBox)sender;
-            var car = (Car)listBox.SelectedItem;
-            if (car==null)
+            var car = (Car)CarsListBox.SelectedItem;
+            if (car == null)
             {
                 return;
             }
@@ -40,6 +40,22 @@ namespace Autosaloon
             {
                 ApplicationListBox.Items.Add(application);
             }
+        }
+
+        private void ChangeAutosaloonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var newAvtosaloon = new NewAutosaloonForm();
+            newAvtosaloon.ShowDialog();
+            if (newAvtosaloon.DialogResult == DialogResult.OK)
+            {
+                _saloon = newAvtosaloon.Autosaloon;
+                CarsListBox.Items.Clear();
+                foreach (var car in _saloon.GetCars())
+                {
+                    CarsListBox.Items.Add(car);
+                }
+            }
+            UpdateWindow();
         }
     }
 }

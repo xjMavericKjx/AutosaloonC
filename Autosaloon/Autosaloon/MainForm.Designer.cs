@@ -32,6 +32,8 @@
             this.CarsLabel = new System.Windows.Forms.Label();
             this.CarsListBox = new System.Windows.Forms.ListBox();
             this.NumberOfCarsPanel = new System.Windows.Forms.Panel();
+            this.QuantityCarsInSaloonLabel = new System.Windows.Forms.Label();
+            this.QuantityCarsLabel = new System.Windows.Forms.Label();
             this.InforationPanel = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.CarInformationTabPage = new System.Windows.Forms.TabPage();
@@ -46,11 +48,16 @@
             this.NumberOfPassegerLabel = new System.Windows.Forms.Label();
             this.CarNameLabel = new System.Windows.Forms.Label();
             this.ApplicatinsTabPage = new System.Windows.Forms.TabPage();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.QuantityCarsLabel = new System.Windows.Forms.Label();
-            this.QuantityCarsInSaloonLabel = new System.Windows.Forms.Label();
             this.ApplicationListBox = new System.Windows.Forms.ListBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ChangeAutosaloonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DownloadAutosaloonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveAutosaloonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CreateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.заявкаНаПокупкуСоСтендаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.заявкаНаОтложеннуюПокупкуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CarsPanel.SuspendLayout();
             this.NumberOfCarsPanel.SuspendLayout();
             this.InforationPanel.SuspendLayout();
@@ -95,6 +102,25 @@
             this.NumberOfCarsPanel.Name = "NumberOfCarsPanel";
             this.NumberOfCarsPanel.Size = new System.Drawing.Size(572, 46);
             this.NumberOfCarsPanel.TabIndex = 1;
+            // 
+            // QuantityCarsInSaloonLabel
+            // 
+            this.QuantityCarsInSaloonLabel.AutoSize = true;
+            this.QuantityCarsInSaloonLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.QuantityCarsInSaloonLabel.Location = new System.Drawing.Point(351, 15);
+            this.QuantityCarsInSaloonLabel.Name = "QuantityCarsInSaloonLabel";
+            this.QuantityCarsInSaloonLabel.Size = new System.Drawing.Size(0, 20);
+            this.QuantityCarsInSaloonLabel.TabIndex = 1;
+            // 
+            // QuantityCarsLabel
+            // 
+            this.QuantityCarsLabel.AutoSize = true;
+            this.QuantityCarsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.QuantityCarsLabel.Location = new System.Drawing.Point(54, 15);
+            this.QuantityCarsLabel.Name = "QuantityCarsLabel";
+            this.QuantityCarsLabel.Size = new System.Drawing.Size(291, 20);
+            this.QuantityCarsLabel.TabIndex = 0;
+            this.QuantityCarsLabel.Text = "Автомобилей доступно в салоне:";
             // 
             // InforationPanel
             // 
@@ -226,41 +252,6 @@
             this.ApplicatinsTabPage.Text = "Заявки";
             this.ApplicatinsTabPage.UseVisualStyleBackColor = true;
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(596, 24);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // файлToolStripMenuItem
-            // 
-            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.файлToolStripMenuItem.Text = "Файл";
-            // 
-            // QuantityCarsLabel
-            // 
-            this.QuantityCarsLabel.AutoSize = true;
-            this.QuantityCarsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.QuantityCarsLabel.Location = new System.Drawing.Point(54, 15);
-            this.QuantityCarsLabel.Name = "QuantityCarsLabel";
-            this.QuantityCarsLabel.Size = new System.Drawing.Size(291, 20);
-            this.QuantityCarsLabel.TabIndex = 0;
-            this.QuantityCarsLabel.Text = "Автомобилей доступно в салоне:";
-            // 
-            // QuantityCarsInSaloonLabel
-            // 
-            this.QuantityCarsInSaloonLabel.AutoSize = true;
-            this.QuantityCarsInSaloonLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.QuantityCarsInSaloonLabel.Location = new System.Drawing.Point(351, 15);
-            this.QuantityCarsInSaloonLabel.Name = "QuantityCarsInSaloonLabel";
-            this.QuantityCarsInSaloonLabel.Size = new System.Drawing.Size(0, 20);
-            this.QuantityCarsInSaloonLabel.TabIndex = 1;
-            // 
             // ApplicationListBox
             // 
             this.ApplicationListBox.FormattingEnabled = true;
@@ -268,6 +259,74 @@
             this.ApplicationListBox.Name = "ApplicationListBox";
             this.ApplicationListBox.Size = new System.Drawing.Size(363, 121);
             this.ApplicationListBox.TabIndex = 0;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FileToolStripMenuItem,
+            this.CreateToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(596, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // FileToolStripMenuItem
+            // 
+            this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ChangeAutosaloonToolStripMenuItem,
+            this.DownloadAutosaloonToolStripMenuItem,
+            this.SaveAutosaloonToolStripMenuItem});
+            this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
+            this.FileToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.FileToolStripMenuItem.Text = "Файл";
+            // 
+            // ChangeAutosaloonToolStripMenuItem
+            // 
+            this.ChangeAutosaloonToolStripMenuItem.Name = "ChangeAutosaloonToolStripMenuItem";
+            this.ChangeAutosaloonToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.ChangeAutosaloonToolStripMenuItem.Text = "Добавить новый Автосалон";
+            this.ChangeAutosaloonToolStripMenuItem.Click += new System.EventHandler(this.ChangeAutosaloonToolStripMenuItem_Click);
+            // 
+            // DownloadAutosaloonToolStripMenuItem
+            // 
+            this.DownloadAutosaloonToolStripMenuItem.Name = "DownloadAutosaloonToolStripMenuItem";
+            this.DownloadAutosaloonToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.DownloadAutosaloonToolStripMenuItem.Text = "Загрузить Автосалон";
+            // 
+            // SaveAutosaloonToolStripMenuItem
+            // 
+            this.SaveAutosaloonToolStripMenuItem.Name = "SaveAutosaloonToolStripMenuItem";
+            this.SaveAutosaloonToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.SaveAutosaloonToolStripMenuItem.Text = "Сохранить Автосалон";
+            // 
+            // CreateToolStripMenuItem
+            // 
+            this.CreateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CarToolStripMenuItem,
+            this.заявкаНаПокупкуСоСтендаToolStripMenuItem,
+            this.заявкаНаОтложеннуюПокупкуToolStripMenuItem});
+            this.CreateToolStripMenuItem.Name = "CreateToolStripMenuItem";
+            this.CreateToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.CreateToolStripMenuItem.Text = "Создать";
+            // 
+            // CarToolStripMenuItem
+            // 
+            this.CarToolStripMenuItem.Name = "CarToolStripMenuItem";
+            this.CarToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
+            this.CarToolStripMenuItem.Text = "Автомобиль";
+            // 
+            // заявкаНаПокупкуСоСтендаToolStripMenuItem
+            // 
+            this.заявкаНаПокупкуСоСтендаToolStripMenuItem.Name = "заявкаНаПокупкуСоСтендаToolStripMenuItem";
+            this.заявкаНаПокупкуСоСтендаToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
+            this.заявкаНаПокупкуСоСтендаToolStripMenuItem.Text = "Заявка на покупку со стенда";
+            // 
+            // заявкаНаОтложеннуюПокупкуToolStripMenuItem
+            // 
+            this.заявкаНаОтложеннуюПокупкуToolStripMenuItem.Name = "заявкаНаОтложеннуюПокупкуToolStripMenuItem";
+            this.заявкаНаОтложеннуюПокупкуToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
+            this.заявкаНаОтложеннуюПокупкуToolStripMenuItem.Text = "Заявка на отложенную покупку";
             // 
             // MainForm
             // 
@@ -280,7 +339,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Выберите автосалон";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.CarsPanel.ResumeLayout(false);
             this.CarsPanel.PerformLayout();
@@ -306,7 +365,7 @@
         private System.Windows.Forms.Label CarsLabel;
         private System.Windows.Forms.ListBox CarsListBox;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage CarInformationTabPage;
         private System.Windows.Forms.TabPage ApplicatinsTabPage;
@@ -323,6 +382,13 @@
         private System.Windows.Forms.Label QuantityCarsInSaloonLabel;
         private System.Windows.Forms.Label QuantityCarsLabel;
         private System.Windows.Forms.ListBox ApplicationListBox;
+        private System.Windows.Forms.ToolStripMenuItem ChangeAutosaloonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem DownloadAutosaloonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SaveAutosaloonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CreateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem заявкаНаПокупкуСоСтендаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem заявкаНаОтложеннуюПокупкуToolStripMenuItem;
     }
 }
 

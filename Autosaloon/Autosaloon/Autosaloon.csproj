@@ -47,6 +47,12 @@
     <Compile Include="Applications.cs" />
     <Compile Include="Exceptions\CarNumberException.cs" />
     <Compile Include="Exceptions\PurchaserNameException.cs" />
+    <Compile Include="NewAutosaloonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAutosaloonForm.Designer.cs">
+      <DependentUpon>NewAutosaloonForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UIApplicationsForDelayedDelivery.cs" />
     <Compile Include="UIApplicationsInStock.cs" />
     <Compile Include="Avtosaloon.cs" />
@@ -61,6 +67,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAutosaloonForm.resx">
+      <DependentUpon>NewAutosaloonForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -69,7 +69,6 @@
             this.Controls.Add(this.CreateButton);
             this.Name = "NewAutosaloonForm";
             this.Text = "NewAutosaloonForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewAutosaloonForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

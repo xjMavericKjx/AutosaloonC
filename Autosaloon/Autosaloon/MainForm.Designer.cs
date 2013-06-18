@@ -315,6 +315,7 @@
             this.CarToolStripMenuItem.Name = "CarToolStripMenuItem";
             this.CarToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
             this.CarToolStripMenuItem.Text = "Автомобиль";
+            this.CarToolStripMenuItem.Click += new System.EventHandler(this.CarToolStripMenuItem_Click);
             // 
             // заявкаНаПокупкуСоСтендаToolStripMenuItem
             // 

@@ -18,10 +18,5 @@ namespace Autosaloon
             DialogResult = DialogResult.OK;
             Close();
         }
-
-        private void NewAutosaloonForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            DialogResult = DialogResult.OK;
-        }
     }
 }

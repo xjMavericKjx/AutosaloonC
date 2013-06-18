@@ -45,6 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Applications.cs" />
+    <Compile Include="CreateNewCarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNewCarForm.Designer.cs">
+      <DependentUpon>CreateNewCarForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Exceptions\CarNumberException.cs" />
     <Compile Include="Exceptions\PurchaserNameException.cs" />
     <Compile Include="NewAutosaloonForm.cs">
@@ -65,6 +71,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CreateNewCarForm.resx">
+      <DependentUpon>CreateNewCarForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

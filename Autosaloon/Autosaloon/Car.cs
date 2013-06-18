@@ -12,9 +12,10 @@ namespace Autosaloon
         public Avtosaloon Autosaloon { get; private set; }
         private readonly ArrayList _applicationsForPurchase = new ArrayList();
 
-        public Car(Avtosaloon aulotasoon)
+        public Car(Avtosaloon aulotasoon, int quantityInStock)
         {
             Autosaloon = aulotasoon;
+            QuantityInStock = quantityInStock;
             Autosaloon.AddCar(this);
             Availability = QuantityInStock != 0;
         }

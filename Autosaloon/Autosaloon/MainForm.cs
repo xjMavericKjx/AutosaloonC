@@ -13,7 +13,6 @@ namespace Autosaloon
         private Avtosaloon _saloon;
         private void MainForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void CarsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,13 +48,34 @@ namespace Autosaloon
             if (newAvtosaloon.DialogResult == DialogResult.OK)
             {
                 _saloon = newAvtosaloon.Autosaloon;
-                CarsListBox.Items.Clear();
-                foreach (var car in _saloon.GetCars())
-                {
-                    CarsListBox.Items.Add(car);
-                }
+                UpdateCarsListBox();
             }
             UpdateWindow();
+        }
+
+        private void CarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_saloon == null)
+            {
+                MessageBox.Show("Сначала необходимо создать автосалон");
+                return;
+            }
+            var carDialog = new CreateNewCarForm(_saloon);
+            carDialog.ShowDialog();
+            if (carDialog.DialogResult == DialogResult.OK)
+            {
+                UpdateCarsListBox();
+            }
+            UpdateWindow();
+        }
+
+        private void UpdateCarsListBox()
+        {
+            CarsListBox.Items.Clear();
+            foreach (var car in _saloon.GetCars())
+            {
+                CarsListBox.Items.Add(car);
+            }
         }
     }
 }

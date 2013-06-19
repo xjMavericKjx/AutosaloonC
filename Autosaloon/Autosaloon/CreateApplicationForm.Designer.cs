@@ -91,6 +91,7 @@
             this.ApplicationInStockRadioButton.TabStop = true;
             this.ApplicationInStockRadioButton.Text = "Заявка на покупку со стенда";
             this.ApplicationInStockRadioButton.UseVisualStyleBackColor = true;
+            this.ApplicationInStockRadioButton.CheckedChanged += new System.EventHandler(this.ApplicationInStockRadioButton_CheckedChanged);
             // 
             // ApplicationOfDeliveryRadioButton
             // 
@@ -115,6 +116,7 @@
             // 
             // PercentTextBox
             // 
+            this.PercentTextBox.Enabled = false;
             this.PercentTextBox.Location = new System.Drawing.Point(136, 125);
             this.PercentTextBox.Name = "PercentTextBox";
             this.PercentTextBox.Size = new System.Drawing.Size(127, 20);

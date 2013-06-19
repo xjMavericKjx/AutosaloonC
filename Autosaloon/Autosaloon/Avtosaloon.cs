@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Linq;
 
 namespace Autosaloon
 {
+    [Serializable]
     public class Avtosaloon
     {
         public string Name { get; set; }

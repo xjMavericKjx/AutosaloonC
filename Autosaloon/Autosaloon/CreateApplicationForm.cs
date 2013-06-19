@@ -17,10 +17,10 @@ namespace Autosaloon
         {
             if (ApplicationInStockRadioButton.Checked)
             {
-                Application = new UIApplicationsInStock(NameOfBuyerTextBox.Text, _car);
+                Application = new UIApplicationsInStock(NameOfBuyerTextBox.Text, _car)
                     {
-
-                    }
+                        CellNumber = CallNumberTextBox.Text
+                    };
             }
             if (ApplicationOfDeliveryRadioButton.Checked)
             {
@@ -30,7 +30,8 @@ namespace Autosaloon
                         CellNumber = CallNumberTextBox.Text
                     };
             }
-
+            DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void ApplicationOfDeliveryRadioButton_CheckedChanged(object sender, System.EventArgs e)
@@ -50,6 +51,11 @@ namespace Autosaloon
         private void PercentTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             GetNumberValue(e);
+        }
+
+        private void ApplicationInStockRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            PercentTextBox.Enabled = false;
         }
         
     }

@@ -4,6 +4,7 @@ using Autosaloon.Exceptions;
 
 namespace Autosaloon
 {
+    [Serializable]
     public class UIApplicationsInStock : Applications
     {
 

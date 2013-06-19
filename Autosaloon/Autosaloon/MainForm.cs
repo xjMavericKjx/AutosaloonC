@@ -1,5 +1,8 @@
 ﻿using System;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace Autosaloon
 {
@@ -46,8 +49,8 @@ namespace Autosaloon
             {
                 _saloon = newAvtosaloon.Autosaloon;
                 UpdateCarsListBox();
+                UpdateWindow();
             }
-            UpdateWindow();
         }
 
         private void CarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -62,8 +65,8 @@ namespace Autosaloon
             if (carDialog.DialogResult == DialogResult.OK)
             {
                 UpdateCarsListBox();
+                UpdateWindow();
             }
-            UpdateWindow();
         }
 
         private void UpdateCarsListBox()
@@ -96,6 +99,53 @@ namespace Autosaloon
             if (application.DialogResult == DialogResult.OK)
             {
                 UpdateApplicationListBox((Car)CarsListBox.SelectedItem);
+            }
+        }
+
+        private void SaveAutosaloonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var saveAutosaloonFileDialog = new SaveFileDialog
+                {
+                    Title = "Сохранение Автосалона"
+                };
+            saveAutosaloonFileDialog.ShowDialog();
+
+            if (saveAutosaloonFileDialog.FileName != "")
+            {
+                var formatter = new BinaryFormatter();
+                using (
+                    var fStream = new FileStream(saveAutosaloonFileDialog.FileName, FileMode.Create, FileAccess.Write,
+                                                 FileShare.None))
+                {
+                    formatter.Serialize(fStream, _saloon);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Не указано имя файла.");
+            }
+        }
+
+        private void DownloadAutosaloonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var openAutosaloonFileDialog = new OpenFileDialog
+                {
+                    Title = "Выберите файл с Автосалоном"
+                };
+            openAutosaloonFileDialog.ShowDialog();
+            if (openAutosaloonFileDialog.FileName != "")
+            {
+                var formatter = new BinaryFormatter();
+                using (var fStream = File.OpenRead(openAutosaloonFileDialog.FileName))
+                {
+                    _saloon = (Avtosaloon) formatter.Deserialize(fStream);
+                }
+                UpdateCarsListBox();
+                UpdateWindow();
+            }
+            else
+            {
+                MessageBox.Show("Не указано имя файла.");
             }
         }
     }

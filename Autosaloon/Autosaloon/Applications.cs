@@ -1,8 +1,10 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using Autosaloon.Exceptions;
 
 namespace Autosaloon
 {
+    [Serializable]
     public abstract class Applications
     {
         public string NameOfBuyer { get; set; }

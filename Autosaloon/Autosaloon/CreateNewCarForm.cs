@@ -15,14 +15,23 @@ namespace Autosaloon
 
         private void CreateCarButton_Click(object sender, EventArgs e)
         {
-            Car = new Car(_saloon,Convert.ToInt32(QuantityInStockTextBox.Text))
-                {
-                    Name = CarNameTextBox.Text,
-                    MaximumNumberOfPassengers = Convert.ToInt32(NumberOfPassegerTextBox.Text),
-                    Cost = Convert.ToInt32(CostTextBox.Text)
-                };
-            DialogResult = DialogResult.OK;
-            Close();
+            if (!String.IsNullOrEmpty(CarNameTextBox.Text)
+                && !String.IsNullOrEmpty(CostTextBox.Text)
+                && !String.IsNullOrEmpty(NumberOfPassegerTextBox.Text))
+            {
+                Car = new Car(_saloon, Convert.ToInt32(QuantityInStockTextBox.Text))
+                    {
+                        Name = CarNameTextBox.Text,
+                        MaximumNumberOfPassengers = Convert.ToInt32(NumberOfPassegerTextBox.Text),
+                        Cost = Convert.ToInt32(CostTextBox.Text)
+                    };
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Неуказаны необходимые поля.");
+            }
         }
 
         private void NumberOfPassegerTextBox_KeyPress(object sender, KeyPressEventArgs e)

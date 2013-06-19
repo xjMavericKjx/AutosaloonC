@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 
 namespace Autosaloon
 {
+    [Serializable]
     public class Car
     {
         public string Name { get; set; }

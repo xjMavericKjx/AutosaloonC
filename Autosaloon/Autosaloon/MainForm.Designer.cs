@@ -292,12 +292,14 @@
             this.DownloadAutosaloonToolStripMenuItem.Name = "DownloadAutosaloonToolStripMenuItem";
             this.DownloadAutosaloonToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.DownloadAutosaloonToolStripMenuItem.Text = "Загрузить Автосалон";
+            this.DownloadAutosaloonToolStripMenuItem.Click += new System.EventHandler(this.DownloadAutosaloonToolStripMenuItem_Click);
             // 
             // SaveAutosaloonToolStripMenuItem
             // 
             this.SaveAutosaloonToolStripMenuItem.Name = "SaveAutosaloonToolStripMenuItem";
             this.SaveAutosaloonToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.SaveAutosaloonToolStripMenuItem.Text = "Сохранить Автосалон";
+            this.SaveAutosaloonToolStripMenuItem.Click += new System.EventHandler(this.SaveAutosaloonToolStripMenuItem_Click);
             // 
             // CreateToolStripMenuItem
             // 
@@ -311,7 +313,7 @@
             // CarToolStripMenuItem
             // 
             this.CarToolStripMenuItem.Name = "CarToolStripMenuItem";
-            this.CarToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.CarToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.CarToolStripMenuItem.Text = "Автомобиль";
             this.CarToolStripMenuItem.Click += new System.EventHandler(this.CarToolStripMenuItem_Click);
             // 

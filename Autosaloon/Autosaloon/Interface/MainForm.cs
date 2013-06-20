@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
@@ -31,6 +32,7 @@ namespace Autosaloon
             var car = (Car)CarsListBox.SelectedItem;
             if (car == null)
             {
+                ClearCarPanel();
                 return;
             }
             CarNameTextBox.Text = car.Name;
@@ -39,6 +41,15 @@ namespace Autosaloon
             QuantityInStockTextBox.Text = car.QuantityInStock.ToString();
             AvailabilityValueLabel.Text = car.Availability ? "ДА" : "НЕТ";
             UpdateApplicationListBox(car);
+        }
+
+        private void ClearCarPanel()
+        {
+            CarNameTextBox.Text = "";
+            NumberOfPassegerTextBox.Text = "";
+            CostTextBox.Text = "";
+            QuantityInStockTextBox.Text = "";
+            AvailabilityValueLabel.Text = "Выберите автомобиль.";
         }
 
         private void ChangeAutosaloonToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,8 +113,30 @@ namespace Autosaloon
             }
         }
 
+        private void CalculateApplicationButton_Click(object sender, EventArgs e)
+        {
+            if (ApplicationListBox.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите заявку из списка.");
+                return;
+            }
+            var application = (Applications)ApplicationListBox.SelectedItem;
+            var calculateApplication = new CalculateApplicationForm(application);
+            calculateApplication.ShowDialog();
+            if (calculateApplication.DialogResult == DialogResult.OK)
+            {
+                application.Car.RemoveApplication(application);
+                UpdateApplicationListBox(application.Car);
+            }
+        }
+
         private void SaveAutosaloonToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (_saloon == null)
+            {
+                MessageBox.Show("Для сохранения необходимо наличие хоть однго автосалона!");
+                return;
+            }
             var saveAutosaloonFileDialog = new SaveFileDialog
                 {
                     Title = "Сохранение Автосалона"
@@ -148,5 +181,21 @@ namespace Autosaloon
                 MessageBox.Show("Не указано имя файла.");
             }
         }
+
+        private void CarsListBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (CarsListBox.SelectedItem == null)
+            {
+                return;
+            }
+            if (e.KeyCode == Keys.Delete)
+            {
+                var car = (Car)CarsListBox.SelectedItem;
+                _saloon.RemoveCar(car);
+                UpdateCarsListBox();
+                UpdateWindow();
+            }
+        }
+
     }
 }

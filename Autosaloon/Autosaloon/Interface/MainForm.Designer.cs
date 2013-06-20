@@ -48,8 +48,9 @@
             this.NumberOfPassegerLabel = new System.Windows.Forms.Label();
             this.CarNameLabel = new System.Windows.Forms.Label();
             this.ApplicatinsTabPage = new System.Windows.Forms.TabPage();
+            this.CalculateApplicationButton = new System.Windows.Forms.Button();
             this.ApplicationListBox = new System.Windows.Forms.ListBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.MainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ChangeAutosaloonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DownloadAutosaloonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,16 +64,18 @@
             this.tabControl.SuspendLayout();
             this.CarInformationTabPage.SuspendLayout();
             this.ApplicatinsTabPage.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.MainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // CarsPanel
             // 
+            this.CarsPanel.AutoSize = true;
+            this.CarsPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.CarsPanel.Controls.Add(this.CarsLabel);
             this.CarsPanel.Controls.Add(this.CarsListBox);
-            this.CarsPanel.Location = new System.Drawing.Point(12, 48);
+            this.CarsPanel.Location = new System.Drawing.Point(12, 27);
             this.CarsPanel.Name = "CarsPanel";
-            this.CarsPanel.Size = new System.Drawing.Size(176, 324);
+            this.CarsPanel.Size = new System.Drawing.Size(146, 208);
             this.CarsPanel.TabIndex = 0;
             // 
             // CarsLabel
@@ -89,24 +92,27 @@
             this.CarsListBox.FormattingEnabled = true;
             this.CarsListBox.Location = new System.Drawing.Point(4, 32);
             this.CarsListBox.Name = "CarsListBox";
-            this.CarsListBox.Size = new System.Drawing.Size(169, 277);
+            this.CarsListBox.Size = new System.Drawing.Size(139, 173);
             this.CarsListBox.TabIndex = 0;
             this.CarsListBox.SelectedIndexChanged += new System.EventHandler(this.CarsListBox_SelectedIndexChanged);
+            this.CarsListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CarsListBox_KeyDown);
             // 
             // NumberOfCarsPanel
             // 
+            this.NumberOfCarsPanel.AutoSize = true;
+            this.NumberOfCarsPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.NumberOfCarsPanel.Controls.Add(this.QuantityCarsInSaloonLabel);
             this.NumberOfCarsPanel.Controls.Add(this.QuantityCarsLabel);
-            this.NumberOfCarsPanel.Location = new System.Drawing.Point(12, 378);
+            this.NumberOfCarsPanel.Location = new System.Drawing.Point(12, 251);
             this.NumberOfCarsPanel.Name = "NumberOfCarsPanel";
-            this.NumberOfCarsPanel.Size = new System.Drawing.Size(572, 46);
+            this.NumberOfCarsPanel.Size = new System.Drawing.Size(356, 33);
             this.NumberOfCarsPanel.TabIndex = 1;
             // 
             // QuantityCarsInSaloonLabel
             // 
             this.QuantityCarsInSaloonLabel.AutoSize = true;
             this.QuantityCarsInSaloonLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.QuantityCarsInSaloonLabel.Location = new System.Drawing.Point(351, 15);
+            this.QuantityCarsInSaloonLabel.Location = new System.Drawing.Point(353, 13);
             this.QuantityCarsInSaloonLabel.Name = "QuantityCarsInSaloonLabel";
             this.QuantityCarsInSaloonLabel.Size = new System.Drawing.Size(0, 20);
             this.QuantityCarsInSaloonLabel.TabIndex = 1;
@@ -115,7 +121,7 @@
             // 
             this.QuantityCarsLabel.AutoSize = true;
             this.QuantityCarsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.QuantityCarsLabel.Location = new System.Drawing.Point(54, 15);
+            this.QuantityCarsLabel.Location = new System.Drawing.Point(47, 13);
             this.QuantityCarsLabel.Name = "QuantityCarsLabel";
             this.QuantityCarsLabel.Size = new System.Drawing.Size(291, 20);
             this.QuantityCarsLabel.TabIndex = 0;
@@ -123,10 +129,12 @@
             // 
             // InforationPanel
             // 
+            this.InforationPanel.AutoSize = true;
+            this.InforationPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.InforationPanel.Controls.Add(this.tabControl);
-            this.InforationPanel.Location = new System.Drawing.Point(194, 48);
+            this.InforationPanel.Location = new System.Drawing.Point(166, 27);
             this.InforationPanel.Name = "InforationPanel";
-            this.InforationPanel.Size = new System.Drawing.Size(390, 324);
+            this.InforationPanel.Size = new System.Drawing.Size(305, 207);
             this.InforationPanel.TabIndex = 2;
             // 
             // tabControl
@@ -136,7 +144,7 @@
             this.tabControl.Location = new System.Drawing.Point(4, 10);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(383, 194);
+            this.tabControl.Size = new System.Drawing.Size(298, 194);
             this.tabControl.TabIndex = 0;
             // 
             // CarInformationTabPage
@@ -154,7 +162,7 @@
             this.CarInformationTabPage.Location = new System.Drawing.Point(4, 22);
             this.CarInformationTabPage.Name = "CarInformationTabPage";
             this.CarInformationTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.CarInformationTabPage.Size = new System.Drawing.Size(375, 168);
+            this.CarInformationTabPage.Size = new System.Drawing.Size(290, 168);
             this.CarInformationTabPage.TabIndex = 0;
             this.CarInformationTabPage.Text = "Информация об автомобиле";
             this.CarInformationTabPage.UseVisualStyleBackColor = true;
@@ -169,30 +177,30 @@
             // 
             // QuantityInStockTextBox
             // 
-            this.QuantityInStockTextBox.Location = new System.Drawing.Point(188, 84);
+            this.QuantityInStockTextBox.Location = new System.Drawing.Point(148, 84);
             this.QuantityInStockTextBox.Name = "QuantityInStockTextBox";
-            this.QuantityInStockTextBox.Size = new System.Drawing.Size(146, 20);
+            this.QuantityInStockTextBox.Size = new System.Drawing.Size(117, 20);
             this.QuantityInStockTextBox.TabIndex = 8;
             // 
             // CostTextBox
             // 
             this.CostTextBox.Location = new System.Drawing.Point(9, 84);
             this.CostTextBox.Name = "CostTextBox";
-            this.CostTextBox.Size = new System.Drawing.Size(146, 20);
+            this.CostTextBox.Size = new System.Drawing.Size(121, 20);
             this.CostTextBox.TabIndex = 7;
             // 
             // NumberOfPassegerTextBox
             // 
-            this.NumberOfPassegerTextBox.Location = new System.Drawing.Point(188, 30);
+            this.NumberOfPassegerTextBox.Location = new System.Drawing.Point(148, 30);
             this.NumberOfPassegerTextBox.Name = "NumberOfPassegerTextBox";
-            this.NumberOfPassegerTextBox.Size = new System.Drawing.Size(146, 20);
+            this.NumberOfPassegerTextBox.Size = new System.Drawing.Size(117, 20);
             this.NumberOfPassegerTextBox.TabIndex = 6;
             // 
             // CarNameTextBox
             // 
             this.CarNameTextBox.Location = new System.Drawing.Point(9, 30);
             this.CarNameTextBox.Name = "CarNameTextBox";
-            this.CarNameTextBox.Size = new System.Drawing.Size(146, 20);
+            this.CarNameTextBox.Size = new System.Drawing.Size(121, 20);
             this.CarNameTextBox.TabIndex = 5;
             // 
             // AvailabilityLabel
@@ -207,7 +215,7 @@
             // QuantityInStockLabel
             // 
             this.QuantityInStockLabel.AutoSize = true;
-            this.QuantityInStockLabel.Location = new System.Drawing.Point(185, 68);
+            this.QuantityInStockLabel.Location = new System.Drawing.Point(145, 68);
             this.QuantityInStockLabel.Name = "QuantityInStockLabel";
             this.QuantityInStockLabel.Size = new System.Drawing.Size(98, 13);
             this.QuantityInStockLabel.TabIndex = 3;
@@ -225,7 +233,7 @@
             // NumberOfPassegerLabel
             // 
             this.NumberOfPassegerLabel.AutoSize = true;
-            this.NumberOfPassegerLabel.Location = new System.Drawing.Point(185, 13);
+            this.NumberOfPassegerLabel.Location = new System.Drawing.Point(145, 13);
             this.NumberOfPassegerLabel.Name = "NumberOfPassegerLabel";
             this.NumberOfPassegerLabel.Size = new System.Drawing.Size(109, 13);
             this.NumberOfPassegerLabel.TabIndex = 1;
@@ -242,33 +250,44 @@
             // 
             // ApplicatinsTabPage
             // 
+            this.ApplicatinsTabPage.Controls.Add(this.CalculateApplicationButton);
             this.ApplicatinsTabPage.Controls.Add(this.ApplicationListBox);
             this.ApplicatinsTabPage.Location = new System.Drawing.Point(4, 22);
             this.ApplicatinsTabPage.Name = "ApplicatinsTabPage";
             this.ApplicatinsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ApplicatinsTabPage.Size = new System.Drawing.Size(375, 168);
+            this.ApplicatinsTabPage.Size = new System.Drawing.Size(288, 168);
             this.ApplicatinsTabPage.TabIndex = 1;
             this.ApplicatinsTabPage.Text = "Заявки";
             this.ApplicatinsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // CalculateApplicationButton
+            // 
+            this.CalculateApplicationButton.Location = new System.Drawing.Point(46, 133);
+            this.CalculateApplicationButton.Name = "CalculateApplicationButton";
+            this.CalculateApplicationButton.Size = new System.Drawing.Size(198, 28);
+            this.CalculateApplicationButton.TabIndex = 1;
+            this.CalculateApplicationButton.Text = "Расчитать споимость заявки";
+            this.CalculateApplicationButton.UseVisualStyleBackColor = true;
+            this.CalculateApplicationButton.Click += new System.EventHandler(this.CalculateApplicationButton_Click);
             // 
             // ApplicationListBox
             // 
             this.ApplicationListBox.FormattingEnabled = true;
             this.ApplicationListBox.Location = new System.Drawing.Point(6, 6);
             this.ApplicationListBox.Name = "ApplicationListBox";
-            this.ApplicationListBox.Size = new System.Drawing.Size(363, 121);
+            this.ApplicationListBox.Size = new System.Drawing.Size(278, 121);
             this.ApplicationListBox.TabIndex = 0;
             // 
-            // menuStrip1
+            // MainMenuStrip
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileToolStripMenuItem,
             this.CreateToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(596, 24);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
+            this.MainMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MainMenuStrip.Name = "MainMenuStrip";
+            this.MainMenuStrip.Size = new System.Drawing.Size(480, 24);
+            this.MainMenuStrip.TabIndex = 3;
+            this.MainMenuStrip.Text = "menuStrip1";
             // 
             // FileToolStripMenuItem
             // 
@@ -328,12 +347,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 436);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(480, 310);
             this.Controls.Add(this.InforationPanel);
             this.Controls.Add(this.NumberOfCarsPanel);
             this.Controls.Add(this.CarsPanel);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.MainMenuStrip);
+            this.MainMenuStrip = this.MainMenuStrip;
             this.Name = "MainForm";
             this.Text = "Выберите автосалон";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -346,8 +366,8 @@
             this.CarInformationTabPage.ResumeLayout(false);
             this.CarInformationTabPage.PerformLayout();
             this.ApplicatinsTabPage.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.MainMenuStrip.ResumeLayout(false);
+            this.MainMenuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,7 +380,7 @@
         private System.Windows.Forms.Panel InforationPanel;
         private System.Windows.Forms.Label CarsLabel;
         private System.Windows.Forms.ListBox CarsListBox;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip MainMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage CarInformationTabPage;
@@ -384,6 +404,7 @@
         private System.Windows.Forms.ToolStripMenuItem CreateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CreateApplicationToolStripMenuItem;
+        private System.Windows.Forms.Button CalculateApplicationButton;
     }
 }
 

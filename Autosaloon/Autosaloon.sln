@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autosaloon", "Autosaloon\Autosaloon.csproj", "{8F931FB8-BD15-471A-BA2D-FEB81C9143D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutosaloonUnitTestProject", "AutosaloonUnitTestProject\AutosaloonUnitTestProject.csproj", "{0F1B00BA-D388-4718-A2EE-C1B2D8282AD0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{8F931FB8-BD15-471A-BA2D-FEB81C9143D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F931FB8-BD15-471A-BA2D-FEB81C9143D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F931FB8-BD15-471A-BA2D-FEB81C9143D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F1B00BA-D388-4718-A2EE-C1B2D8282AD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F1B00BA-D388-4718-A2EE-C1B2D8282AD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F1B00BA-D388-4718-A2EE-C1B2D8282AD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F1B00BA-D388-4718-A2EE-C1B2D8282AD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

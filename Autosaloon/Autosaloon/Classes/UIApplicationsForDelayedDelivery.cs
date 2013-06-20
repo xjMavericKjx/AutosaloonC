@@ -21,13 +21,18 @@ namespace Autosaloon
             try
             {
                 if(Car.QuantityInStock == 0)throw new CarNumberException("Машина отсутствует на складе");
-                return Car.Cost*(1 - (SalePercent/100));
+                return (Car.Cost * (100 - SalePercent)) / 100;
             }
             catch (CarNumberException ex)
             {
                 MessageBox.Show("" + ex);
                 throw;
             }
+        }
+
+        public override string ToString()
+        {
+            return "" + NameOfBuyer + " - " + CellNumber + ";  "+SalePercent+"%";
         }
     }
 }

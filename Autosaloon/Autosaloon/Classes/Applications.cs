@@ -25,10 +25,8 @@ namespace Autosaloon
             Car = car;
             Car.AddApplication(this);
         }
-        public override string ToString()
-        {
-            return "" + NameOfBuyer + " - " + CellNumber;
-        }
+
+        public abstract override string ToString();
 
         public abstract int СalculateCost();
     }

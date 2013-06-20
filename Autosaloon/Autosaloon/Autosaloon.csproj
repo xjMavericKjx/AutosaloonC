@@ -45,6 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Applications.cs" />
+    <Compile Include="CalculateApplicationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalculateApplicationForm.Designer.cs">
+      <DependentUpon>CalculateApplicationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateApplicationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CalculateApplicationForm.resx">
+      <DependentUpon>CalculateApplicationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateApplicationForm.resx">
       <DependentUpon>CreateApplicationForm.cs</DependentUpon>
     </EmbeddedResource>

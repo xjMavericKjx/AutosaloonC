@@ -26,5 +26,10 @@ namespace Autosaloon
                 throw;
             }
         }
+
+        public override string ToString()
+        {
+            return "" + NameOfBuyer + " - " + CellNumber;
+        }
     }
 }

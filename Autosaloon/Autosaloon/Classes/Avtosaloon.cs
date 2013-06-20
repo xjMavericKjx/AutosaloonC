@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Linq;
 
-namespace Autosaloon
+namespace Autosaloon.Classes
 {
     [Serializable]
     public class Avtosaloon

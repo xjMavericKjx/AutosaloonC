@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 
-namespace Autosaloon
+namespace Autosaloon.Classes
 {
     [Serializable]
     public class Car

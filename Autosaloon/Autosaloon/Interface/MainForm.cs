@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Drawing;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
-using System.Xml.Serialization;
+using Autosaloon.Classes;
 
-namespace Autosaloon
+namespace Autosaloon.Interface
 {
     public partial class MainForm : Form
     {

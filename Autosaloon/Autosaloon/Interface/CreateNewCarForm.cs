@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using Autosaloon.Classes;
 
-namespace Autosaloon
+namespace Autosaloon.Interface
 {
     public partial class CreateNewCarForm : Form
     {

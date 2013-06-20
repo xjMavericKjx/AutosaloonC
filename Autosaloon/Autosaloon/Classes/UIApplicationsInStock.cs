@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Autosaloon.Exceptions;
 
-namespace Autosaloon
+namespace Autosaloon.Classes
 {
     [Serializable]
     public class UIApplicationsInStock : Applications

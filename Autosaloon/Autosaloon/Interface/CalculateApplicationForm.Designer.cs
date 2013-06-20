@@ -1,4 +1,4 @@
-﻿namespace Autosaloon
+﻿namespace Autosaloon.Interface
 {
     partial class CalculateApplicationForm
     {
@@ -84,6 +84,7 @@
             this.CanlcelButton.TabIndex = 4;
             this.CanlcelButton.Text = "Отменить покупку";
             this.CanlcelButton.UseVisualStyleBackColor = true;
+            this.CanlcelButton.Click += new System.EventHandler(this.CanlcelButton_Click);
             // 
             // PercentValueLabel
             // 
@@ -133,6 +134,7 @@
             this.Controls.Add(this.NameOfByerLabel);
             this.Name = "CalculateApplicationForm";
             this.Text = "CalculateApplicationForm";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CalculateApplicationForm_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,4 +1,4 @@
-﻿namespace Autosaloon
+﻿namespace Autosaloon.Interface
 {
     partial class MainForm
     {

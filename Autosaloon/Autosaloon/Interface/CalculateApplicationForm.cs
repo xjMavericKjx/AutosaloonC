@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Autosaloon.Classes;
 
-namespace Autosaloon
+namespace Autosaloon.Interface
 {
     public partial class CalculateApplicationForm : Form
     {
-        private Applications _application;
+        private readonly Applications _application;
         public CalculateApplicationForm(Applications application)
         {
             _application = application;
@@ -26,6 +20,24 @@ namespace Autosaloon
         {
             DialogResult = DialogResult.OK;
             Close();
+        }
+
+        private void CanlcelButton_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.No;
+            Close();
+        }
+
+        private void CalculateApplicationForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                CalculateButton.PerformClick();
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                CanlcelButton.PerformClick();
+            }
         }
     }
 }

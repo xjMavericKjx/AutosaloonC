@@ -3,6 +3,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 using Autosaloon.Classes;
+using Autosaloon.Properties;
 
 namespace Autosaloon.Interface
 {
@@ -48,7 +49,7 @@ namespace Autosaloon.Interface
             NumberOfPassegerTextBox.Text = "";
             CostTextBox.Text = "";
             QuantityInStockTextBox.Text = "";
-            AvailabilityValueLabel.Text = "Выберите автомобиль.";
+            AvailabilityValueLabel.Text = Rus_Resources.MainForm_ClearCarPanel_SelectCar;
         }
 
         private void ChangeAutosaloonToolStripMenuItem_Click(object sender, EventArgs e)
@@ -195,6 +196,5 @@ namespace Autosaloon.Interface
                 UpdateWindow();
             }
         }
-
     }
 }

@@ -11,7 +11,6 @@
 namespace Autosaloon.Properties {
     using System;
     
-    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,14 +21,14 @@ namespace Autosaloon.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    internal class Rus_Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal Rus_Resources() {
         }
         
         /// <summary>
@@ -39,7 +38,7 @@ namespace Autosaloon.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Autosaloon.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Autosaloon.Properties.Rus_Resources", typeof(Rus_Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +56,34 @@ namespace Autosaloon.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ;
+        ///Цена: .
+        /// </summary>
+        internal static string CalculateApplicationForm_CalculateApplicationForm_CarCost {
+            get {
+                return ResourceManager.GetString("CalculateApplicationForm_CalculateApplicationForm_CarCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Модель: .
+        /// </summary>
+        internal static string CalculateApplicationForm_CalculateApplicationForm_CarModel {
+            get {
+                return ResourceManager.GetString("CalculateApplicationForm_CalculateApplicationForm_CarModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Выберите автомобиль..
+        /// </summary>
+        internal static string MainForm_ClearCarPanel_SelectCar {
+            get {
+                return ResourceManager.GetString("MainForm_ClearCarPanel_SelectCar", resourceCulture);
             }
         }
     }
